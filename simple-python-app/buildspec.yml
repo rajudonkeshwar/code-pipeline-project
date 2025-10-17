@@ -20,6 +20,10 @@ phases:
       - echo $IMAGE_TAG
       - echo "Running tests..."
       - cd simple-python-app/
+      - echo "Logging in to Docker Hub..."
+      - echo vijay@1998 | docker login -u rajudonkeshwar --password-stdin
+      - echo "Docker Hub login successful."
+      - echo "Logging in to ECR..."
       - echo "Building Docker image..."
       - docker build -t  521992171924.dkr.ecr.us-east-1.amazonaws.com:$IMAGE_TAG .
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $REPO_URL
