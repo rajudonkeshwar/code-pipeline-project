@@ -16,7 +16,7 @@ phases:
   build:
     commands:
       - IMAGE_TAG=$CODEBUILD_BUILD_NUMBER
-      - REPO_URL=521992171924.dkr.ecr.us-east-1.amazonaws.com
+      - REPO_URL=521992171924.dkr.ecr.us-east-1.amazonaws.com/my-app
       - echo $IMAGE_TAG
       - echo "Running tests..."
       - cd simple-python-app/
