@@ -27,6 +27,7 @@ phases:
       - echo "Building Docker image..."
       - docker build -t  521992171924.dkr.ecr.us-east-1.amazonaws.com:$IMAGE_TAG .
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $REPO_URL
+      - echo " connected to ecr successfully "
       - docker push $REPO_URL:$IMAGE_TAG
   post_build:
     commands:
